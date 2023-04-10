@@ -29,6 +29,7 @@
 
 .infoDivP {
     width: 100%;
+    flex-shrink: 0;
 }
 
 #infoMyselfName {
@@ -41,22 +42,35 @@
     color: var(--text2);
 }
 
-#logoutBtn {
-    cursor: pointer;
-    padding: 10px;
-    flex-shrink: 0;
-    border-radius: 20px;
-    color: var(--text);
-    font-family: 'Nunito', sans-serif;
-    background-image: radial-gradient(var(--box), var(--box));
-}
+#logoutBtn {}
 
 #logoutBtn:hover {
     color: #fff;
     background-image: radial-gradient(#ff6262, #c40000);
 }
 
-#changeAvt {
+#changeAvt {}
+
+#changeAvt:hover {
+    color: #fff;
+    background-image: radial-gradient(#00bc0d, #00a552);
+}
+
+
+/* menu item của self */
+
+.menuSelf {
+    padding: 10px 0;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.itemmenuSelf>i {
+    margin: 0 10px;
+}
+
+.itemmenuSelf {
     cursor: pointer;
     padding: 10px;
     flex-shrink: 0;
@@ -64,9 +78,29 @@
     color: var(--text);
     font-family: 'Nunito', sans-serif;
     background-image: radial-gradient(var(--box), var(--box));
+    width: 48%;
 }
 
-#changeAvt:hover {
-    color: #fff;
-    background-image: radial-gradient(#00bc0d, #00a552);
+@media only screen and (max-width: 1000px) {
+    .infoBox {
+        width: 85%;
+    }
+    .menuSelf {
+        flex-wrap: wrap;
+    }
+    .itemmenuSelf {
+        width: 85%;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .infoBox {
+        width: 100%;
+    }
+    .menuSelf {
+        flex-wrap: wrap;
+    }
+    .itemmenuSelf {
+        width: 95%;
+    }
 }
