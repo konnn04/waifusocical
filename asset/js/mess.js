@@ -4,8 +4,9 @@ const showChatBox = document.getElementById("showChatBox")
 var itemChat
 var messJson = {
     "time": gettime(),
+    "username": clientUname,
     "name": clientName,
-    "avt": nameRes + clientAvt,
+    "avt": clientAvt,
     "content": inputChatMes.innerText.trim()
 }
 var sampleChat1 = `<div class="itemChat">
@@ -180,6 +181,7 @@ inputChatMesBtn.onclick = async() => {
                 messJson = {
                     "time": gettime(),
                     "name": clientName,
+                    "username": clientUname,
                     "avt": clientAvt,
                     "content": inputChatMes.innerText.trim(),
                 }

@@ -7,7 +7,7 @@ if (localStorage.getItem("info")) {
     clientName = jsonGot["name"]
     clientUname = jsonGot["username"]
     clientId = jsonGot["id"]
-    clientAvt = jsonGot["avt"]
+    clientAvt = nameRes + jsonGot["avt"]
 } else {
     window.location = `${nameRes}/login.html`
 }
