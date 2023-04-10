@@ -27,8 +27,8 @@ koCreTus.onclick = () => {
 
 okCreTus.onclick = () => {
     if (contentCreTus.innerText.trim() != "") {
-        if (contentCreTus.innerText.trim().length > 150) {
-            noiceCreTus.innerText = `Giới hạn chữ là 150, đang có ${contentCreTus.innerText.trim().length}`
+        if (contentCreTus.innerText.trim().length > 350) {
+            noiceCreTus.innerText = `Giới hạn chữ là 350, \n Đang có ${contentCreTus.innerText.trim().length}`
         } else {
             var tus = {
                 "avtUser": `${nameRes}/asset/img/avt.jpg`,
@@ -41,7 +41,7 @@ okCreTus.onclick = () => {
 
             noiceCreTus.innerText = ""
             contentCreTus.innerText = ""
-            feedOuput.innerHTML += feedDefault(tus)
+            feedOuput.innerHTML = feedDefault(tus) + feedOuput.innerHTML
             callAPIFeed(2, tus)
         }
     } else {

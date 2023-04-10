@@ -1,0 +1,121 @@
+#messSence {
+    width: 100%;
+    height: calc(100vh - 6rem);
+    font-family: 'Nunito', sans-serif;
+}
+
+.chatBox {
+    background-color: var(--dock-hvr);
+    height: 100%;
+    position: relative
+}
+
+.chatInputBox {
+    position: absolute;
+    bottom: 5px;
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    color: var(--text);
+    gap: 10px;
+}
+
+#chatInput {
+    font-size: 1.3rem;
+    background-color: var(--dock-hvr);
+    border-radius: 1.2rem;
+    width: 100%;
+    max-width: calc(100% - 10px - 3rem);
+    padding: 10px 20px;
+    outline: 0;
+}
+
+#chatInputBtn {
+    transition: all .1s linear;
+    flex-shrink: 0;
+    cursor: pointer;
+    display: flex;
+    width: 3rem;
+    height: 3rem;
+    background-color: #10aac9;
+    border-radius: 50%;
+}
+
+#chatInputBtn:hover {
+    background-color: #1fdaff;
+}
+
+#chatInputBtn>i {
+    color: #fff;
+    font-size: 1.3rem;
+    margin: auto;
+}
+
+
+/* chat box */
+
+#showChatBox {
+    width: 100%;
+    height: calc(100% - 5rem);
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.itemChat {
+    position: relative;
+    padding: 10px 10px 0 10px;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    color: var(--text);
+}
+
+.itemChat:hover,
+.itemChat1:hover .timeChat {
+    opacity: 1;
+}
+
+.timeChat {
+    transition: all .2s linear;
+    opacity: 0;
+    color: #7b7b7b;
+    font-size: .9rem;
+    font-style: italic;
+    position: absolute;
+    top: 10px;
+    right: 30px;
+}
+
+.avtChat {
+    overflow: hidden;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+.avtChat>img {
+    height: 50px;
+    object-fit: cover;
+}
+
+.contentChatBox {
+    flex: 1;
+}
+
+.nameChat {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.contentChat {
+    font-size: 1.1rem;
+    width: 90%;
+}
+
+.itemChat1 {
+    position: relative;
+    color: var(--text);
+    padding-left: 70px;
+    flex: 1;
+}

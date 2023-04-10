@@ -19,11 +19,12 @@
     <link rel="stylesheet" href="./asset/css/default.css">
     <link rel="stylesheet" href="./asset/css/feed.css">
     <link rel="stylesheet" href="./asset/css/self.css">
+    <link rel="stylesheet" href="./asset/css/mess.css">
     <link rel="stylesheet" href="./asset/css/music.css">
 
     <script>
-        const nameRes = ""
-            // /waifusocical
+        const nameRes = "/waifusocical"
+            //
     </script>
     <script src="./asset/js/getinfo.js"></script>
 </head>
@@ -199,6 +200,7 @@
                 <div class="box">
                     <div class="menuSelf">
                         <div id="changeAvt" class="itemmenuSelf">
+                            <input type="file" accept="image/*" hidden id="uploadAvt">
                             <i class="fa-solid fa-user-astronaut"></i> Đổi Avt
                         </div>
                         <div id="logoutBtn" class="itemmenuSelf">
@@ -206,6 +208,37 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            <div id="messSence">
+                <div class="box chatBox">
+                    <div id="showChatBox">
+                        <div class="itemChat">
+                            <div class="timeChat"></div>
+                            <div class="avtChat">
+                                <img src="/asset/img/avt.jpg" alt="">
+                            </div>
+                            <div class="contentChatBox">
+                                <div class="nameChat">Konnn</div>
+                                <div class="contentChat">Xin am assumenda ipsa!</div>
+                            </div>
+                        </div>
+                        <div class="itemChat1">
+                            <div class="contentChatBox">
+                                <div class="contentChat">Xin chào lần nữa lo</div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="chatInputBox">
+                        <div id="chatInput" contenteditable="true">
+                        </div>
+                        <div id="chatInputBtn">
+                            <i class="fa-solid fa-arrows-spin"></i>
+                        </div>
+                    </div>
+                </div>
+
             </div>
             <!-- END -->
             <div class="footer "></div>
@@ -241,12 +274,13 @@
 
 </body>
 <script src="./asset/js/main.js "></script>
+<script src="./asset/js/dock.js "></script>
 <script src="./asset/js/feed.js "></script>
 <script src="./asset/js/creTus.js "></script>
 <script src="./asset/js/self.js "></script>
+<script src="./asset/js/mess.js "></script>
 <script src="./asset/js/theme.js "></script>
 <script src="./asset/js/music.js "></script>
-<script src="./asset/js/dock.js "></script>
 
 
 </html>

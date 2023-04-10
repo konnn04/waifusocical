@@ -3,6 +3,7 @@ const itemDock = dock[0].getElementsByClassName("box-dock")
 
 //Alert
 const alertFilter = document.getElementById("filterAlert")
+const alertText = document.getElementById("alertText")
 const alertY = document.getElementById("alertYes")
 const alertN = document.getElementById("alertNo")
 const spaceMain = document.getElementById("feed-space")
@@ -10,11 +11,13 @@ const spaceMain = document.getElementById("feed-space")
 
 const DOMfeed = document.getElementById("feedSence")
 const DOMself = document.getElementById("selfSence")
+const DOMmess = document.getElementById("messSence")
 
-DOMself.style.display = "none"
+
 
 const DOMselfname = document.getElementById("infoMyselfName")
 const DOMselfuname = document.getElementById("infoMyselfUname")
+var tempImg
 
 function gettime() {
     var s = ""
