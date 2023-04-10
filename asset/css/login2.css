@@ -1,0 +1,139 @@
+body{
+    display: flex;
+    flex-wrap: wrap;
+    background-image: radial-gradient(0, rgb(0, 0, 0, 0.3), rgb(0, 0, 0, 0.3)), url(../img/bg_login.jpg);
+}
+.left-side {
+    flex: 1;
+    height: 100vh;
+    min-width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.canvas{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 400px ;
+    width: 70%;
+    height: 70%;
+    position: relative;
+}
+#pic-girl{
+    position: absolute;
+    height: 100%;   
+    animation: 1.5s pic-girl-move .5s ease-in alternate infinite;
+}
+#pic-girl-2{
+    height: 60%;
+    position: absolute;
+    top: 25%;
+    left: 10%;
+    animation: pic-girl-move 1.5s ease-in alternate infinite;
+}
+@keyframes pic-girl-move {
+    from{
+        padding-top: 0px;
+    }
+    to{
+        padding-top: 30px;
+    }
+}
+
+.right-side {
+    display: flex;
+    flex: 0.7;
+    min-width: 500px;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+#box-login {
+ 
+    background-image: linear-gradient( var(--deg), rgba(29, 157, 255, 0.727), rgba(255, 26, 190, 0.622));
+    width: 80%;
+    min-width: 450px;
+    height: 60vh;
+    text-align: center;
+    border-radius: 15px;
+
+    border: 3px dashed #ffffff;
+    box-sizing: border-box;
+    animation: 2s trans-login-box infinite alternate;
+
+}
+
+
+#box-login:hover {
+    animation: shader;
+}
+
+#box-login-input{
+    width: 70%;
+    height: 400px;
+    
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.box-input{
+    color: #ffffff;
+    background-color: rgba(72, 72, 72, 0.037);
+   
+    padding: 0 20px;
+    width: 50%;
+    min-width: 200px;
+    height: 28px;
+    font-size: 18px;
+    float: right;
+    border: 0  none #000;
+    border-bottom:1px solid #000 ;
+}
+label{
+    float: left;
+}
+
+@shader {
+    form {}
+    to {}
+}
+
+@keyframes trans-login-box {
+    0% {
+        --deg: 165deg;
+    }
+    10% {
+        --deg: 160deg;
+    }
+    20% {
+        --deg: 155deg;
+    }
+    30% {
+        --deg: 150deg;
+    }
+    40% {
+        --deg: 145deg;
+    }
+    50% {
+        --deg: 140deg;
+    }
+    60% {
+        --deg: 135deg;
+    }
+    70% {
+        --deg: 130deg;
+    }
+    80% {
+        --deg: 125deg;
+    }
+    90% {
+        --deg: 120deg;
+    }
+    100% {
+        --deg: 115deg;
+    }
+}

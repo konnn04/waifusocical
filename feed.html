@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waifu</title>
+    <link rel="shortcut icon" href="/asset/img/avt.jpg" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+    <!--  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <link rel="stylesheet" href="./asset/css/main.css">
+    <link rel="stylesheet" href="./asset/css/default.css">
+    <link rel="stylesheet" href="./asset/css/feed.css">
+    <link rel="stylesheet" href="./asset/css/self.css">
+    <link rel="stylesheet" href="./asset/css/music.css">
+
+    <script>
+        const nameRes = ""
+            // /waifusocical
+    </script>
+    <script src="./asset/js/getinfo.js"></script>
+</head>
+
+<body>
+    <div id="filterAlert">
+        <div id="boxAlert">
+            <p id="alertTitle">Xác nhận</p>
+            <p id="alertText">Chắc với quyết định đó?</p>
+            <div id="trueFalse">
+                <div id="alertYes">Xác nhận</div>
+                <div id="alertNo">Hủy</div>
+            </div>
+        </div>
+    </div>
+    <div id="filterCreTus">
+        <div id="boxCreTus">
+            <p>Tạo bài viết:</p>
+            <div class="boxContentCreTus">
+                <div contenteditable="true" id="contentCreTus"></div>
+                <div id="placeholderCreTus">Viết gì đó đi!!!</div>
+            </div>
+            <p id="noiceCreTus"></p>
+            <div id="comformCreTus">Đăng</div>
+            <div id="cancelCreTus">Hủy</div>
+        </div>
+    </div>
+    <div id="music-box">
+        <div id="bg-music"></div>
+        <div id="close-music">
+            <i class="fa-solid fa-xmark"></i>
+        </div>
+        <div id="disk-music">
+            <img src="" alt=""></img>
+        </div>
+        <div id="info-music">
+            <h1 id="song-name"></h1>
+            <h2 id="artist-name"></h2>
+        </div>
+        <div id="timeline-music">
+            <p id="music-now">00:00</p>
+            <p id="music-end">00:00</p>
+        </div>
+        <div id="prog-music">
+            <div id="prog-hover"></div>
+            <div id="prog-music-now"></div>
+
+        </div>
+        <div id="control-music">
+            <div class="btn-control-music">
+                <i class="fa-solid fa-chevron-left"></i>
+            </div>
+            <div class="btn-control-music">
+                <i class="fa-solid fa-play"></i>
+            </div>
+            <div class="btn-control-music">
+                <i class="fa-solid fa-chevron-right"></i>
+            </div>
+            <div class="btn-control-music-small">
+                <i class="fa-solid fa-volume-high"></i>
+                <div class="ctrl-vol">
+                    <input type="range" name="" min="0" max="20" id="ctrl-vol">
+                </div>
+            </div>
+        </div>
+        <div id="music-more">
+            <i class="fa-solid fa-angle-down"></i>
+        </div>
+        <div id="plist-box" class="scroll">
+
+        </div>
+    </div>
+
+    <!-- ============================= -->
+    <div id="feed-space">
+        <div class="l">
+            <div class="logo-box">
+                WIBU UNIVERSE!!!
+            </div>
+            <div class="search-box">
+                <div class="icon-search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input class="ip-search" type="search-box" placeholder="Tìm kiếm...">
+                </div>
+
+            </div>
+            <div class="menu1-l">
+                <div class="menu1-l-box">
+                    <i class="fa-solid fa-paw menu1-l-icon"></i>
+                    <h2 class="text-feature">Anime </h2>
+
+                </div>
+                <div class="menu1-l-box">
+
+                    <i class="fa-solid fa-book-skull menu1-l-icon"></i>
+                    <h2 class="text-feature">Manga </h2>
+                </div>
+                <div class="menu1-l-box">
+                    <i class="fa-solid fa-book menu1-l-icon"></i>
+                    <h2 class="text-feature">Light Novel </h2>
+                </div>
+                <div class="menu1-l-box">
+                    <i class="fa-solid fa-child-dress menu1-l-icon"></i>
+                    <h2 class="text-feature">Waifu </h2>
+                </div>
+            </div>
+        </div>
+        <div class="m scroll">
+            <div id="feedSence">
+                <div class="box story">
+                    <div class="cre-story-box">
+                        <img src="./asset/img/avt.jpg" alt="">
+                        <div class="title-cre-story-box">
+                            <i class="fa-solid fa-square-plus"></i>
+                            <p>Đăng tải cuộc sống của bạn</p>
+                        </div>
+                    </div>
+                    <div class="story-box">
+
+                    </div>
+                    <div class="story-box">
+
+                    </div>
+                    <div class="story-box">
+
+                    </div>
+                    <div class="story-box">
+
+                    </div>
+                    <div class="story-box">
+
+                    </div>
+                    <div class="more-story">
+                        <i class="fa-solid fa-circle-arrow-right"></i>
+                    </div>
+                </div>
+
+                <div class="box cre-tus">
+                    <div class="box-circle">
+                        <img src="./asset/img/avt.jpg" alt="">
+                    </div>
+                    <div id="cre-status">
+                        <p>
+                            Bạn đang nghĩ gì đấy?
+                        </p>
+                    </div>
+
+
+                    <label for="up-img-tus">
+                <div class="box-circle">
+                <i class="fa-solid fa-image"></i>
+                <!-- <input type="file" accept="image/*" id="up-img-tus"> -->
+               </div>
+               </label>
+
+                </div>
+                <!-- 1 -->
+                <div id="feedOuput">
+
+                </div>
+
+            </div>
+            <div id="selfSence">
+                <div class="infoBox">
+                    <div class="infoDivImg">
+                        <img src="./asset/img/avt.jpg" alt="">
+                    </div>
+                    <div class="infoDivP">
+                        <p id="infoMyselfName"></p>
+                        <p id="infoMyselfUname"></p>
+                    </div>
+                    <div id="changeAvt">Đổi Avt</div>
+                    <div id="logoutBtn">Đăng xuất</div>
+                </div>
+            </div>
+            <!-- END -->
+            <div class="footer "></div>
+        </div>
+        <!--  -->
+        <div class="r ">
+            <div class="menu1-r ">
+                <div id="dark-light">
+                    <div id="dl-dot"></div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="dock-bar ">
+        <div class="box-dock ">
+            <i class="fa-solid fa-house "></i>
+        </div>
+        <div class="box-dock ">
+            <i class="fa-solid fa-user-group "></i>
+        </div>
+        <div class="box-dock ">
+            <i class="fa-solid fa-tv "></i>
+        </div>
+        <div class="box-dock ">
+            <i class="fa-solid fa-message "></i>
+        </div>
+        <div class="box-dock ">
+            <i class="fa-solid fa-user "></i>
+        </div>
+    </div>
+
+</body>
+<script src="./asset/js/main.js "></script>
+<script src="./asset/js/feed.js "></script>
+<script src="./asset/js/creTus.js "></script>
+<script src="./asset/js/self.js "></script>
+<script src="./asset/js/theme.js "></script>
+<script src="./asset/js/music.js "></script>
+<script src="./asset/js/dock.js "></script>
+
+
+</html>

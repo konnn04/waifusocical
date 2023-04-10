@@ -1,0 +1,462 @@
+.story {
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    height: 200px;
+    gap: 10px;
+}
+
+.story-box {
+    width: 120px;
+    height: 100%;
+    flex-shrink: 0;
+    background-image: url(https://previews.123rf.com/images/klikk/klikk0512/klikk051200067/287925-aut%C3%A9ntico-tv-nieve.jpg);
+    background-size: cover;
+    border-radius: 20px;
+}
+
+.cre-story-box {
+    position: relative;
+    flex-shrink: 0;
+    width: 120px;
+    height: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.cre-story-box:hover>img {
+    opacity: 100%;
+}
+
+.cre-story-box img {
+    transition: all .2s ease-in;
+    opacity: 80%;
+    height: 100%;
+    transform: translateX(-20%);
+}
+
+.title-cre-story-box {
+    transition: all .2s ease-in;
+    background-image: linear-gradient(260deg, var(--bg-box), var(--bg-box2));
+    cursor: pointer;
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    height: 30%;
+    bottom: 0;
+    color: var(--text);
+}
+
+.title-cre-story-box:hover {
+    background-image: linear-gradient(45deg, #3acaff, #0074f9);
+}
+
+.title-cre-story-box>i {
+    transition: all .2s ease;
+    color: rgb(122, 122, 122);
+    right: calc(50% - 0.9rem);
+    position: absolute;
+    top: -0.9rem;
+    font-size: 1.8rem;
+}
+
+.title-cre-story-box:hover>i {
+    color: var(--text);
+    text-shadow: 0 0 30px #fff;
+}
+
+.title-cre-story-box>p {
+    margin-top: 16px;
+}
+
+.more-story {
+    cursor: pointer;
+    position: absolute;
+    font-size: 1.6rem;
+    width: 1.6rem;
+    height: 1.6rem;
+    top: calc(50% - 1.6rem);
+    right: 0;
+    color: rgb(4, 255, 205);
+    border-radius: 50%;
+    background-color: var(--text);
+    border: 2px solid var(--text);
+}
+
+.cre-tus {
+    cursor: pointer;
+    display: flex;
+    height: fit-content;
+    padding: 10px 20px;
+    align-items: center;
+    gap: 10px;
+}
+
+.cre-tus>img {
+    width: 100%;
+    object-fit: cover;
+}
+
+#cre-status {
+    transition: all .1s linear;
+    user-select: none;
+    font-size: 1.2rem;
+    color: var(--text);
+    width: 100%;
+    height: fit-content;
+    border-radius: 1rem;
+    padding: 10px 20px;
+    border: 1px solid var(--border);
+}
+
+
+/* #cre-status:hover {} */
+
+
+/* Tạo bài viết */
+
+#filterCreTus {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: #00000090;
+    z-index: 99;
+    display: none;
+}
+
+#boxCreTus {
+    position: relative;
+    margin: auto;
+    width: 500px;
+    min-height: 190px;
+    background-color: var(--bg-box);
+    border-radius: 30px;
+    color: var(--text);
+    font-family: 'Nunito', sans-serif;
+}
+
+#boxCreTus>p {
+    font-size: 1.6rem;
+    padding: 20px 0 5px 20px;
+}
+
+.boxContentCreTus {
+    position: relative;
+    width: 90%;
+    margin: auto;
+    margin-bottom: 70px;
+}
+
+#contentCreTus {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    margin: auto;
+    height: fit-content;
+    max-height: 150px;
+    overflow-y: auto;
+    border-radius: 20px;
+    border: 15px solid var(--border);
+    background-color: var(--border);
+    font-size: 1.2rem;
+    outline: none;
+    z-index: 9999;
+}
+
+#placeholderCreTus {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    color: #797979;
+}
+
+#noiceCreTus {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    font-size: 1rem!important;
+    font-style: italic;
+    color: #ff0000;
+}
+
+#comformCreTus,
+#cancelCreTus {
+    cursor: pointer;
+    background-color: var(--box);
+    width: fit-content;
+    height: fit-content;
+    padding: 10px 15px;
+    border-radius: 15px;
+    position: absolute;
+    bottom: 20px;
+    right: 30px;
+}
+
+#cancelCreTus {
+    right: 120px;
+}
+
+#cancelCreTus:hover {
+    position: absolute;
+    color: #fff;
+    background-color: #c80000;
+}
+
+#comformCreTus:hover {
+    position: absolute;
+    color: #fff;
+    background-color: #00c80d;
+}
+
+
+/* Khung bài viết */
+
+.box-circle {
+    flex-shrink: 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.6rem;
+    color: var(--text);
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: var(--box);
+    transition: all .2s ease-in;
+}
+
+.box-circle input {
+    display: none;
+}
+
+.box-circle:hover {
+    text-shadow: 0 0 20px #fff;
+    background-color: var(--box-hvr);
+}
+
+.feeds {
+    height: fit-content;
+    padding: 10px 20px;
+}
+
+.hfeed {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hfeed-in4 {
+    display: flex;
+    align-items: center;
+}
+
+.hfeed-avt {
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.hfeed-name {
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: 'Nunito', sans-serif;
+    color: var(--text);
+    padding: 0 10px;
+}
+
+.hfeed-menu {
+    display: flex;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    color: var(--text);
+}
+
+.hfeed-menu:hover {
+    background-color: #2d2d2d;
+}
+
+.tus {
+    color: var(--text);
+    font: 500 1rem sans-serif;
+    margin: 5px 0;
+}
+
+.img-feed img {
+    width: 100%;
+    border-radius: 10px;
+    max-height: 80vh;
+}
+
+.interact-box {
+    padding: 5px 0;
+    display: flex;
+    height: fit-content;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    color: var(--text);
+    position: relative;
+}
+
+.heart-int {
+    position: absolute;
+    top: 5px;
+    color: #00000000;
+}
+
+.itrc {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.itrc i {
+    font-size: 1.6rem;
+    cursor: pointer;
+}
+
+.itrc>i:hover.heart-int {
+    color: var(--text);
+}
+
+.liked {
+    color: #ff0000!important;
+}
+
+.detail {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.detail-time {
+    cursor: none;
+    font-style: italic;
+}
+
+.detail-text:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.cmt-box {
+    width: 100%;
+    height: fit-content;
+}
+
+.cmt-box {
+    height: fit-content;
+    padding: 5px 0;
+}
+
+.my-cmt {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.my-cmt input {
+    height: 2rem;
+    width: 100%;
+    background-color: transparent;
+    border: 0;
+    border-bottom: 1px solid #808080;
+    padding: 0 10px;
+    color: var(--text);
+}
+
+.avt-cmt {
+    cursor: pointer;
+    flex-shrink: 0;
+    width: 45px;
+    height: 45px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.other-cmt {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.cmt-shape {
+    position: relative;
+    background-color: var(--box);
+    border-radius: 20px;
+    width: fit-content;
+    height: fit-content;
+    padding: 5px 20px 10px 20px;
+}
+
+.name-cmt {
+    cursor: pointer;
+    color: var(--text);
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+    font-size: 0.8rem;
+}
+
+.name-cmt:hover {
+    text-decoration: underline;
+}
+
+.cmt {
+    color: var(--text);
+    font-size: 1rem;
+    font-family: sans-serif;
+}
+
+.cmt-shape img {
+    margin: 5px 0;
+    max-width: 100%;
+    height: 300px;
+}
+
+.cmt-shape:hover .time-cmt {
+    display: block;
+}
+
+.icon-cmt {
+    cursor: pointer;
+    position: absolute;
+    display: flex;
+    left: 18px;
+    bottom: -14px;
+    background-color: var(--bg-box2);
+    width: fit-content;
+    padding: 5px 10px;
+    height: fit-content;
+    border-radius: 14px;
+    justify-content: center;
+    align-items: center;
+    color: var(--text);
+    gap: 5px;
+    font-size: 0.8rem;
+}
+
+.time-cmt {
+    display: none;
+    position: absolute;
+    top: 5px;
+    right: 30px;
+    color: #c7c7c7;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+.icon-cmt:hover i {
+    color: red;
+}

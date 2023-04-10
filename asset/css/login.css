@@ -1,0 +1,173 @@
+:root {
+    --heightLoginBox: 240px;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+}
+
+#bg-login>img {
+    position: absolute;
+    transition: all 0.5s linear;
+    object-fit: cover;
+    height: 100vh;
+    width: 100vw;
+}
+
+#bg-login {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    filter: brightness(70%);
+    z-index: -9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#base {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+}
+
+#box-login {
+    transition: all .2s linear;
+    overflow: hidden;
+    margin: auto;
+    width: 380px;
+    height: var(--heightLoginBox);
+    border-radius: 30px;
+    border: 1px solid #000;
+    padding: 30px;
+    backdrop-filter: blur(5px);
+}
+
+#scroll-box {
+    transition: all .3s ease-in;
+    display: flex;
+    width: fit-content;
+}
+
+#login,
+#create {
+    margin-right: 50px;
+    width: 320px;
+    flex-shrink: 0;
+    height: 100%;
+}
+
+#login>p {
+    transition: all .1s linear;
+    font-size: 1.5rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+    animation: titleLogin 1.5s linear infinite;
+}
+
+@keyframes titleLogin {
+    0% {
+        text-shadow: 3px 3px 5px #00f2ff;
+    }
+    25% {
+        text-shadow: 3px -3px 5px #ff0000;
+    }
+    50% {
+        text-shadow: -3px -3px 5px #00ff1a;
+    }
+    75% {
+        text-shadow: -3px 3px 5px #0011ff;
+    }
+    100% {
+        text-shadow: 3px 3px 5px #00f2ff;
+    }
+}
+
+.footer-login {
+    display: flex;
+    justify-content: space-between;
+}
+
+.Btn {
+    transition: all .1s linear;
+    padding: 10px;
+    width: fit-content;
+    height: fit-content;
+    margin-top: 10px;
+    border-radius: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #ffffff;
+    background-image: radial-gradient(#007f98, #007cb5);
+    cursor: pointer;
+}
+
+.Btn:hover {
+    background-image: radial-gradient(#00d5ff, #009fe9);
+}
+
+#create>p {
+    font-size: 1.5rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+    text-shadow: 2px 2px 5px #00f2ff;
+}
+
+.input-box {
+    width: 80%;
+    margin-top: 15px;
+}
+
+.input-box>input {
+    transition: all .1s linear;
+    height: 2rem;
+    background-color: transparent;
+    margin-top: 5px;
+    border: 0;
+    border-bottom: 1px solid #ffffff1b;
+    outline: 0;
+    font-size: 1.4rem;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: #fff;
+}
+
+.input-box>input:focus {
+    border-bottom: 1px solid #ffffff;
+}
+
+.input-box>input::placeholder {
+    color: #ffffff40;
+    font-size: 1.2rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.menuAcc {
+    transition: all .1s linear;
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    color: #cdcdcd;
+    cursor: pointer;
+}
+
+.menuAcc>div:hover {
+    text-decoration: underline;
+    color: #fff;
+    text-shadow: 2px 2px 3px #00f2ff;
+}
+
+.noice {
+    width: 120%;
+    margin-top: 5px;
+    color: #ff1919;
+    font-style: italic;
+}
