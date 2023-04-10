@@ -113,7 +113,7 @@ conformBtn[1].onclick = async() => {
                     "name": creName.value.trim(),
                     "username": creUname.value.trim(),
                     "pass": crePw.value.trim(),
-                    "avt": `${nameRes}/asset/img/avt.jpg`
+                    "avt": `/asset/img/avt.jpg`
                 }
                 getAPILogin(2, postJson)
                 console.log("OK")

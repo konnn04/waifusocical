@@ -34,7 +34,7 @@ okCreTus.onclick = () => {
                 "avtUser": `${nameRes}/asset/img/avt.jpg`,
                 "username": clientUname,
                 "name": clientName,
-                "content": contentCreTus.innerText.trim(),
+                "content": toStringClean(contentCreTus.innerText),
                 "timetus": gettime()
             }
             filterCreTusAct.style.display = "none"

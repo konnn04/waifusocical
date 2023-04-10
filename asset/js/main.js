@@ -13,7 +13,19 @@ const DOMfeed = document.getElementById("feedSence")
 const DOMself = document.getElementById("selfSence")
 const DOMmess = document.getElementById("messSence")
 
-
+const toStringClean = (s) => {
+    s = s.trim()
+    while (s.search(/</) > -1) {
+        s = s.replace('<', '&lt')
+    }
+    while (s.search(/>/) > -1) {
+        s = s.replace('>', '&gt')
+    }
+    while (s.search(/&lth1&gt/) > -1) {
+        s = s.replace('>', '&gt')
+    }
+    return s
+}
 
 const DOMselfname = document.getElementById("infoMyselfName")
 const DOMselfuname = document.getElementById("infoMyselfUname")

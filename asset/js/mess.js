@@ -183,7 +183,7 @@ inputChatMesBtn.onclick = async() => {
                     "name": clientName,
                     "username": clientUname,
                     "avt": clientAvt,
-                    "content": inputChatMes.innerText.trim(),
+                    "content": toStringClean(inputChatMes.innerText),
                 }
                 inputChatMes.innerText = ""
                 await callAPIMess(2, messJson)
