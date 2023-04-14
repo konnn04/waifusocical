@@ -21,9 +21,10 @@
     <link rel="stylesheet" href="./asset/css/self.css">
     <link rel="stylesheet" href="./asset/css/mess.css">
     <link rel="stylesheet" href="./asset/css/music.css">
+    <link rel="stylesheet" href="./asset/css/memberlist.css">
 
     <script>
-        const nameRes = "/waifusocical"
+        const nameRes = ""
             //
     </script>
     <script src="./asset/js/getinfo.js"></script>
@@ -44,12 +45,26 @@
         <div id="boxCreTus">
             <p>Tạo bài viết:</p>
             <div class="boxContentCreTus">
-                <div contenteditable="true" id="contentCreTus"></div>
                 <div id="placeholderCreTus">Viết gì đó đi!!!</div>
+                <div contenteditable="true" id="contentCreTus"></div>
             </div>
             <p id="noiceCreTus"></p>
             <div id="comformCreTus">Đăng</div>
             <div id="cancelCreTus">Hủy</div>
+        </div>
+    </div>
+    <div id="filterChangeAvt">
+        <div id="boxChangeAvt">
+            <p>Dán link ảnh avt muốn đổi:</p>
+            <div class="boxInputChangeAvt">
+                <input id="inputChangeAvt" type="text" placeholder="Dán link vào đây!!!">
+            </div>
+            <div id="previewAvt">
+                <img class="avt-client" id="previewAvtSrc" src="" alt="">
+            </div>
+            <p id="noiceChangeAvt"></p>
+            <div id="comformChangeAvt">Lưu</div>
+            <div id="cancelChangeAvt">Hủy</div>
         </div>
     </div>
     <div id="music-box">
@@ -102,7 +117,7 @@
     <div id="feed-space">
         <div class="l">
             <div class="logo-box">
-                WIBU UNIVERSE!!!
+                WIBU SOCICAL :3
             </div>
             <div class="search-box">
                 <div class="icon-search">
@@ -136,7 +151,7 @@
             <div id="feedSence">
                 <div class="box story">
                     <div class="cre-story-box">
-                        <img src="./asset/img/avt.jpg" alt="">
+                        <img class="avt-client" src="./asset/img/avt.jpg" alt="">
                         <div class="title-cre-story-box">
                             <i class="fa-solid fa-square-plus"></i>
                             <p>Đăng tải cuộc sống của bạn</p>
@@ -164,7 +179,8 @@
 
                 <div class="box cre-tus">
                     <div class="box-circle">
-                        <img src="./asset/img/avt.jpg" alt="">
+                        <img class="avt-client" src="./asset/img/avt.jpg" alt="">
+
                     </div>
                     <div id="cre-status">
                         <p>
@@ -190,7 +206,7 @@
             <div id="selfSence">
                 <div class="infoBox">
                     <div class="infoDivImg">
-                        <img src="./asset/img/avt.jpg" alt="">
+                        <img class="avt-client" src="./asset/img/avt.jpg" alt="">
                     </div>
                     <div class="infoDivP">
                         <p id="infoMyselfName"></p>
@@ -212,7 +228,7 @@
             <div id="messSence">
                 <div class="box chatBox">
                     <div id="showChatBox">
-                        <div class="itemChat">
+                        <!-- <div class="itemChat">
                             <div class="timeChat"></div>
                             <div class="avtChat">
                                 <img src="/asset/img/avt.jpg" alt="">
@@ -226,8 +242,7 @@
                             <div class="contentChatBox">
                                 <div class="contentChat">Xin chào lần nữa lo</div>
                             </div>
-                        </div>
-
+                        </div> -->
                     </div>
 
                     <div class="chatInputBox">
@@ -249,6 +264,14 @@
                 <div id="dark-light">
                     <div id="dl-dot"></div>
                 </div>
+            </div>
+            <div id="boxMember">
+                <p>Các đồng chí:</p>
+                <div id="boxListMember">
+
+
+                </div>
+
             </div>
 
         </div>
@@ -276,11 +299,13 @@
 <script src="./asset/js/main.js "></script>
 <script src="./asset/js/dock.js "></script>
 <script src="./asset/js/feed.js "></script>
+<script src="./asset/js/interact.js "></script>
 <script src="./asset/js/creTus.js "></script>
 <script src="./asset/js/self.js "></script>
 <script src="./asset/js/mess.js "></script>
 <script src="./asset/js/theme.js "></script>
 <script src="./asset/js/music.js "></script>
+<script src="./asset/js/memberOnline.js "></script>
 
 
 </html>

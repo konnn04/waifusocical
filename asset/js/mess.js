@@ -86,21 +86,20 @@ const initChat = async() => {
     var downJson = await callAPIMess(1)
     if (downJson.length > 50) {
         var id = downJson[50]["id"] - 50
-        callAPIMess(3, id)
+        await callAPIMess(3, id)
     }
     var userSame = ""
     var DOMchat = ""
-
     if (downJson.length > 0) {
         if (downJson.length > 30) {
             for (let i = downJson.length - 30; i < 30; i++) {
-
                 if (userSame != downJson[i]["name"]) {
                     userSame = downJson[i]["name"]
+                    var linkAvt = getAvtById(downJson[i]["uid"])
                     DOMchat += `<div class="itemChat">
                     <div class="timeChat">${downJson[i]["time"]}</div>
                     <div class="avtChat">
-                        <img src="${downJson[i]["avt"]}" alt="">
+                        <img src="${linkAvt}" alt="">
                     </div>
                     <div class="contentChatBox">
                         <div class="nameChat">${downJson[i]["name"]}</div>
@@ -120,13 +119,13 @@ const initChat = async() => {
             }
         } else {
             for (let i = 0; i < downJson.length; i++) {
-
                 if (userSame != downJson[i]["name"]) {
                     userSame = downJson[i]["name"]
+                    var linkAvt = getAvtById(downJson[i]["uid"])
                     DOMchat += `<div class="itemChat">
                     <div class="timeChat">${downJson[i]["time"]}</div>
                     <div class="avtChat">
-                        <img src="${downJson[i]["avt"]}" alt="">
+                        <img src="${linkAvt}" alt="">
                     </div>
                     <div class="contentChatBox">
                         <div class="nameChat">${downJson[i]["name"]}</div>
@@ -162,7 +161,17 @@ inputChatMes.oninput = () => {
     }
 }
 var cooldown = false
-inputChatMesBtn.onclick = async() => {
+inputChatMes.addEventListener('keydown', event => {
+    if (event.key == 'Enter') {
+        sendChat()
+
+    }
+})
+inputChatMesBtn.onclick = () => {
+    sendChat()
+}
+
+async function sendChat() {
     if (cooldown == true) {
         alert("Sống chậm lại sẽ thấy ý nghĩa hơn đó!")
     } else {
@@ -182,12 +191,13 @@ inputChatMesBtn.onclick = async() => {
                     "time": gettime(),
                     "name": clientName,
                     "username": clientUname,
-                    "avt": clientAvt,
+                    "uid": clientId,
                     "content": toStringClean(inputChatMes.innerText),
                 }
-                inputChatMes.innerText = ""
                 await callAPIMess(2, messJson)
                 await initChat()
+                inputChatMes.innerText = ""
+
             }
         } else {
             await initChat()

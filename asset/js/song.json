@@ -1,29 +1,14 @@
 {
     "song": [{
-        "name": "Samsa",
+        "name": "Hitorinbo Envy",
         "singer": "25-ji, Nightcord de.",
-        "link": "/asset/musicBox/mp3/Samsa.ogg",
-        "img": "/asset/musicBox/img/Samsa.webp"
+        "link": "/asset/musicBox/mp3/Hitorinbo_Envy.mp3",
+        "img": "/asset/musicBox/img/Hitorinbo_Envy.png"
     }, {
-        "name": "I Nandesu",
-        "singer": "25-ji, Nightcord de.",
-        "link": "/asset/musicBox/mp3/I_Nandesu.mp3",
-        "img": "/asset/musicBox/img/I_Nandesu.webp"
-    }, {
-        "name": "Hitsuji ga Ippiki",
-        "singer": "Vivid BAD SQUAD",
-        "link": "/asset/musicBox/mp3/Hitsuji_ga_Ippiki.mp3",
-        "img": "/asset/musicBox/img/Hitsuji_ga_Ippiki.webp"
-    }, {
-        "name": "Identity",
-        "singer": "Hatsune Miku & Kanade",
-        "link": "/asset/musicBox/mp3/identity.mp3",
-        "img": "/asset/musicBox/img/Identity.webp"
-    }, {
-        "name": "Shoujo Rei",
-        "singer": "MORE MORE JUMP! & Hatsune Miku",
-        "link": "/asset/musicBox/mp3/Shoujo_Rei.mp3",
-        "img": "/asset/musicBox/img/Shoujo_rei.webp"
+        "name": "Idol",
+        "singer": "Yoasobi",
+        "link": "/asset/musicBox/mp3/Idol.mp3",
+        "img": "/asset/musicBox/img/Idol.jpg"
     }, {
         "name": "Samsa",
         "singer": "25-ji, Nightcord de.",

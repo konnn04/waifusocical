@@ -6,7 +6,9 @@ const okCreTus = document.getElementById("comformCreTus")
 const koCreTus = document.getElementById("cancelCreTus")
 const noiceCreTus = document.getElementById("noiceCreTus")
 
-
+placeholderCreTus.onclick = () => {
+    contentCreTus.focus()
+}
 
 contentCreTus.oninput = () => {
     if (contentCreTus.innerText.trim() != "") {
@@ -31,18 +33,21 @@ okCreTus.onclick = () => {
             noiceCreTus.innerText = `Giới hạn chữ là 350, \n Đang có ${contentCreTus.innerText.trim().length}`
         } else {
             var tus = {
-                "avtUser": `${nameRes}/asset/img/avt.jpg`,
+                "uid": clientId,
                 "username": clientUname,
                 "name": clientName,
                 "content": toStringClean(contentCreTus.innerText),
-                "timetus": gettime()
+                "timetus": gettime(),
+                "avt": null,
+                "cmt": [],
+                "interact": []
             }
             filterCreTusAct.style.display = "none"
 
             noiceCreTus.innerText = ""
             contentCreTus.innerText = ""
-            feedOuput.innerHTML = feedDefault(tus) + feedOuput.innerHTML
             callAPIFeed(2, tus)
+            initFeed()
         }
     } else {
         noiceCreTus.innerText = "Chưa có nội dung!"

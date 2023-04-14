@@ -20,6 +20,7 @@
     border-radius: 50%;
     flex-shrink: 0;
     width: fit-content;
+    aspect-ratio: 1;
     overflow: hidden;
 }
 
@@ -80,6 +81,106 @@
     background-image: radial-gradient(var(--box), var(--box));
     width: 48%;
     margin-bottom: 10px;
+}
+
+
+/* Đổi avt */
+
+#filterChangeAvt {
+    display: none;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: #00000090;
+    z-index: 99;
+}
+
+#boxChangeAvt {
+    position: relative;
+    margin: auto;
+    width: 500px;
+    min-height: 190px;
+    height: fit-content;
+    background-color: var(--bg-box);
+    border-radius: 30px;
+    color: var(--text);
+    font-family: 'Nunito', sans-serif;
+}
+
+#boxChangeAvt>p {
+    font-size: 1.4rem;
+    padding: 20px 0 5px 20px;
+}
+
+.boxInputChangeAvt {
+    position: relative;
+    width: 90%;
+    margin: auto;
+    margin-bottom: 10px;
+}
+
+#inputChangeAvt {
+    color: var(--text);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    margin: auto;
+    height: fit-content;
+    max-height: 150px;
+    width: 100%;
+    overflow-y: auto;
+    border-radius: 20px;
+    background-color: var(--border);
+    border: 0;
+    padding: 10px;
+    font-size: 1.2rem;
+    outline: none;
+}
+
+#previewAvt {
+    margin: auto;
+    width: 70%;
+    aspect-ratio: 1;
+    margin-bottom: 80px;
+}
+
+#noiceChangeAvt {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    font-size: 1rem!important;
+    font-style: italic;
+    color: #ff0000;
+}
+
+#comformChangeAvt,
+#cancelChangeAvt {
+    cursor: pointer;
+    background-color: var(--box);
+    width: fit-content;
+    height: fit-content;
+    padding: 10px 15px;
+    border-radius: 15px;
+    position: absolute;
+    bottom: 20px;
+    right: 30px;
+}
+
+#cancelChangeAvt {
+    right: 120px;
+}
+
+#cancelChangeAvt:hover {
+    position: absolute;
+    color: #fff;
+    background-color: #c80000;
+}
+
+#comformChangeAvt:hover {
+    position: absolute;
+    color: #fff;
+    background-color: #00c80d;
 }
 
 @media only screen and (max-width: 1000px) {

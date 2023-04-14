@@ -71,8 +71,11 @@
     color: var(--text);
 }
 
-.itemChat:hover,
 .itemChat1:hover .timeChat {
+    opacity: 1;
+}
+
+.itemChat:hover .timeChat {
     opacity: 1;
 }
 

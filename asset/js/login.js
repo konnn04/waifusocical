@@ -1,6 +1,6 @@
 const rootLogin = document.querySelector(":root")
 const trans = document.getElementById("scroll-box")
-const forgetAccBtn = document.getElementById("createAcc")
+const creAccBtn = document.getElementById("createAcc")
 const backLogin = document.getElementById("backLogin")
 
 const logUname = document.getElementById("login-un")
@@ -8,6 +8,8 @@ const logPass = document.getElementById("login-pw")
 
 const conformBtn = document.getElementsByClassName("Btn")
 const creName = document.getElementById("login-cre-name")
+const creSex = document.getElementsByClassName("cre-sex")
+
 const creUname = document.getElementById("login-cre-un")
 const crePw = document.getElementById("cre-pw")
 const crePw2 = document.getElementById("cre-pw2")
@@ -16,7 +18,11 @@ const bg = document.getElementById("bg-login").getElementsByTagName("img")
 
 const imgBg = [`./asset/img/bg-login/1.png`, `./asset/img/bg-login/2.png`, `./asset/img/bg-login/3.png`, `./asset/img/bg-login/4.png`, `./asset/img/bg-login/5.png`]
 
-
+function getTimeSecord() {
+    var date = new Date
+    var timeSecord = Math.round((date.getTime() / 1000) - 1681313794)
+    return timeSecord
+}
 
 //backgrond
 var posImg = Math.floor(Math.random() * imgBg.length)
@@ -58,9 +64,9 @@ var secord = setInterval(() => {
 
     }, 1000)
     //login
-forgetAccBtn.onclick = () => {
+creAccBtn.onclick = () => {
     trans.style.translate = "-370px 0"
-    rootLogin.style.setProperty("--heightLoginBox", "310px")
+    rootLogin.style.setProperty("--heightLoginBox", "350px")
 }
 backLogin.onclick = () => {
     trans.style.translate = "none"
@@ -74,7 +80,7 @@ conformBtn[1].onclick = async() => {
         if (waitCre == false) {
             var aouth = true
             var myJson = await getAPILogin(1)
-            if (creName.value.trim() == "" || creUname.value.trim() == "" || crePw.value.trim() == "" || crePw2.value.trim() == "") {
+            if ((creSex[0].checked == false && creSex[1].checked == false) || creName.value.trim() == "" || creUname.value.trim() == "" || crePw.value.trim() == "" || crePw2.value.trim() == "") {
                 noice[1].innerText = "Vui lòng ghi đủ thông tin!"
                 aouth = false
             }
@@ -84,7 +90,6 @@ conformBtn[1].onclick = async() => {
                     aouth = false
                 }
             }
-
             if (aouth == true) {
                 if (crePw.value.trim().length < 8 || crePw.value.trim().length > 35) {
                     noice[1].innerText = "Mật khẩu có độ dài từ 8-35 ký tự!"
@@ -109,11 +114,23 @@ conformBtn[1].onclick = async() => {
             if (aouth == true) {
                 noice[1].style.color = "#00ff8c"
                 noice[1].innerText = "Tạo tài khoản thành công!"
+                var sexCreUser
+                var avtCreUser
+                if (creSex[0].checked) {
+                    sexCreUser = "male"
+                    avtCreUser = `${nameRes}/asset/img/avt_m.jpg`
+                } else {
+                    sexCreUser = "female"
+                    avtCreUser = `${nameRes}/asset/img/avt_f.jpg`
+
+                }
                 var postJson = {
                     "name": creName.value.trim(),
                     "username": creUname.value.trim(),
                     "pass": crePw.value.trim(),
-                    "avt": `/asset/img/avt.jpg`
+                    "sex": sexCreUser,
+                    "avt": avtCreUser,
+                    "timenow": getTimeSecord(),
                 }
                 getAPILogin(2, postJson)
                 console.log("OK")

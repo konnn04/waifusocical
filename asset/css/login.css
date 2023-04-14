@@ -139,6 +139,29 @@ body {
     color: #fff;
 }
 
+.cre-sex-box {
+    height: 2rem;
+    font-size: 1.1rem;
+    display: flex;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: #c3c3c3;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cre-sex-box>form {
+    display: flex;
+    gap: 10px;
+}
+
+.cre-sex-box>form>input {
+    cursor: pointer;
+}
+
+.cre-sex-box>form>label {
+    color: #ffffff;
+}
+
 .input-box>input:focus {
     border-bottom: 1px solid #ffffff;
 }

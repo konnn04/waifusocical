@@ -1,7 +1,6 @@
 const tme = document.getElementById("dark-light")
 var vRoot = document.documentElement
-var likedCmtColor = document.getElementsByClassName("heart-cmt")
-let likedColor = document.getElementsByClassName("heart-int")
+
 
 function light() {
     vRoot.style.setProperty('--bg', '#ddd')
@@ -55,17 +54,5 @@ tme.onclick = () => {
         dark()
         localStorage.setItem("theme", stdTheme)
 
-    }
-}
-
-
-for (i = 0; i < likedColor.length; i++) {
-    likedColor[i].onclick = function() {
-        this.classList.toggle('liked')
-    }
-}
-for (i = 0; i < likedCmtColor.length; i++) {
-    likedCmtColor[i].onclick = function() {
-        this.classList.toggle('liked')
     }
 }

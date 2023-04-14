@@ -1,0 +1,65 @@
+#boxMember {
+    margin-top: 50px;
+    color: var(--text);
+    font-family: 'Nunito', sans-serif;
+}
+
+#boxMember>p {
+    margin: 0 10px;
+    padding: 10px 0;
+    border-top: 1px solid var(--border);
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+#boxListMember {
+    width: 100%;
+    min-height: 60vh;
+    max-height: 600px;
+}
+
+.itemMember {
+    user-select: none;
+    display: flex;
+    gap: 10px;
+    padding: 5px 0;
+    padding-left: 10px;
+    align-items: center;
+}
+
+.itemMember:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.avtItemMember {
+    background-image: url(../img/avt.jpg);
+    width: 50px;
+    height: 50px;
+    background-size: cover;
+    border-radius: 50%;
+    position: relative;
+    border: 2px solid #7d7d7d;
+}
+
+.itemNameMember {
+    font-size: 1.1rem;
+}
+
+.itemMemberDot {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    border-radius: 50%;
+    border: 2px solid #000;
+    width: 15px;
+    height: 15px;
+    background-color: rgb(15, 222, 25);
+}
+
+.bright50 {
+    filter: brightness(50%);
+}
+
+.bright50>.avtItemMember>.itemMemberDot {
+    background-color: rgb(123, 123, 123);
+}
