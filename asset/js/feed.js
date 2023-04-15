@@ -35,6 +35,7 @@ const initLikeCmt = () => {
     numHeart = document.getElementsByClassName("numHeart")
     inputCmt = document.getElementsByClassName("inputCmt")
     boxCmtG = document.getElementsByClassName("cmt-box-g")
+    numCmt = document.getElementsByClassName("num-Cmt")
 
     for (let l = 0; l < likedColor.length; l++) {
         likedColor[l].onclick = function() {
@@ -62,7 +63,7 @@ const initLikeCmt = () => {
 //     <img src="./asset/img/tus1/hVS0Ay5.jpg" alt="">
 // </div> 
 
-var feedDefault = (tus, numInt, liked, cmt) => {
+var feedDefault = (tus, numInt, liked, cmt, numCmtInt) => {
     return `<div class="box feeds">
 <div class="hfeed">
     <div class="hfeed-in4">
@@ -93,8 +94,8 @@ var feedDefault = (tus, numInt, liked, cmt) => {
     </div>
     <div class="detail">
     <p>•</p>
-        <p class="detail-text">
-            0 bình luận
+        <p class="detail-text num-Cmt">
+            ${numCmtInt} bình luận
         </p>
         <p>•</p>
         <p class="detail-text">
@@ -125,41 +126,54 @@ start()
 
 
 //Hàm tự đồng bộ cập nhật trạng thái
+
 setInterval(() => {
     start()
-}, 10000)
-async function start() {
-    await syncTimenowActive(clientId)
-    await callApiInfo()
-    await syncListMemberOnline()
-}
-var feedJsonData
-const feedOuput = document.getElementById("feedOuput")
-initFeed()
-async function initFeed() {
-    await callApiInfo()
-    feedJsonData = await callAPIFeed(1)
-    feedOuput.innerHTML = ""
-    if (feedJsonData.length > 0) {
-        for (let i = feedJsonData.length - 1; i >= 0; i--) {
-            for (let j = 0; j < infoJson.length; j++) {
-                if (feedJsonData[i]["username"] == infoJson[j]["username"]) {
-                    feedJsonData[i]["avt"] = infoJson[j]["avt"]
-                    break
-                }
-            }
-            var numInt = feedJsonData[i]["interact"].length
-            var jsonCmtEx = ""
-            for (let g = 0; g < feedJsonData[i]["cmt"].length; g++) {
-                jsonCmtEx += feedDefaultCmt(feedJsonData[i]["cmt"][g], getAvtByUName(feedJsonData[i]["cmt"][g]["username"]))
-            }
-            if (feedJsonData[i]["interact"].indexOf(clientUname) >= 0) {
-                feedOuput.innerHTML += feedDefault(feedJsonData[i], numInt, ' liked', jsonCmtEx)
-            } else {
-                feedOuput.innerHTML += feedDefault(feedJsonData[i], numInt, jsonCmtEx)
-            }
+}, 15000)
 
+async function start() {
+    await callApiInfo()
+    await initFeed()
+    await syncTimenowActive(clientId)
+    await syncListMemberOnline()
+
+}
+
+const feedOuput = document.getElementById("feedOuput")
+var feedJsonData = ""
+var feedJsonData3 = ""
+async function initFeed() {
+    feedJsonData3 = await callAPIFeed(1)
+    var a = JSON.stringify(feedJsonData3).length
+    var b = JSON.stringify(feedJsonData).length
+    console.log(JSON.stringify(feedJsonData3))
+    console.log(JSON.stringify(feedJsonData))
+    console.log(a + "---" + b)
+    if (a != b) {
+        console.log("refresh feed")
+        feedJsonData = feedJsonData3
+        feedOuput.innerHTML = ""
+        if (feedJsonData3.length > 0) {
+            for (let i = feedJsonData3.length - 1; i >= 0; i--) {
+                feedJsonData3[i]["avt"] = getAvtById(feedJsonData3[i]["uid"])
+                var numCmtInt = feedJsonData3[i]["cmt"].length
+
+                var numInt = feedJsonData3[i]["interact"].length
+                var jsonCmtEx = ""
+                for (let g = feedJsonData3[i]["cmt"].length - 1; g >= 0; g--) {
+                    jsonCmtEx += feedDefaultCmt(feedJsonData3[i]["cmt"][g], getAvtByUName(feedJsonData3[i]["cmt"][g]["username"]))
+                }
+                if (feedJsonData3[i]["interact"].indexOf(clientUname) >= 0) {
+                    feedOuput.innerHTML += feedDefault(feedJsonData3[i], numInt, ' liked', jsonCmtEx, numCmtInt)
+                } else {
+                    feedOuput.innerHTML += feedDefault(feedJsonData3[i], numInt, "", jsonCmtEx, numCmtInt)
+                }
+
+            }
         }
+        initLikeCmt()
     }
-    initLikeCmt()
+
+
+
 }

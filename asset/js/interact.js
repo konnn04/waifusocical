@@ -57,8 +57,8 @@ async function cmtTus(i, clientUname, text) {
             "name": clientName,
             "time": gettime(),
             "text": toStringClean(text)
-        }) + boxCmtG[i].innerHTML
-
+        }, clientAvt) + boxCmtG[i].innerHTML
+        numCmt[i].innerText = userCmt.length + " bình luận"
 
     } else {
         alert("Sống chậm lại 5 giây được không???")

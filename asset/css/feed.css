@@ -463,3 +463,15 @@
 .icon-cmt:hover i {
     color: red;
 }
+
+@media only screen and (max-width: 700px) {
+    .story {
+        height: 150px;
+    }
+    .story-box {
+        width: 90px;
+    }
+    .cre-story-box {
+        width: 90px;
+    }
+}
