@@ -63,12 +63,12 @@ const initLikeCmt = () => {
 //     <img src="./asset/img/tus1/hVS0Ay5.jpg" alt="">
 // </div> 
 
-var feedDefault = (tus, numInt, liked, cmt, numCmtInt) => {
+var feedDefault = (avtsTus, tus, numInt, liked, cmt, numCmtInt) => {
     return `<div class="box feeds">
 <div class="hfeed">
     <div class="hfeed-in4">
         <div class="hfeed-avt">
-            <img src="${tus["avt"]}" alt="">
+            <img src="${avtsTus}" alt="">
         </div>
         <div class="hfeed-name">
             ${tus["name"]}
@@ -139,23 +139,27 @@ async function start() {
 
 }
 
+//Thông báo thay đổi ở feed
+const popNoice = new Audio(nameRes + "/asset/audio/pop.mp3")
+popNoice.volume = 0.2
+
+
 const feedOuput = document.getElementById("feedOuput")
 var feedJsonData = ""
 var feedJsonData3 = ""
 async function initFeed() {
     feedJsonData3 = await callAPIFeed(1)
-    var a = JSON.stringify(feedJsonData3).length
-    var b = JSON.stringify(feedJsonData).length
-    console.log(JSON.stringify(feedJsonData3))
-    console.log(JSON.stringify(feedJsonData))
-    console.log(a + "---" + b)
+    var a = JSON.stringify(feedJsonData).length
+    var b = JSON.stringify(feedJsonData3).length
+
     if (a != b) {
-        console.log("refresh feed")
         feedJsonData = feedJsonData3
+        popNoice.play()
+        console.log("refresh feed")
         feedOuput.innerHTML = ""
         if (feedJsonData3.length > 0) {
             for (let i = feedJsonData3.length - 1; i >= 0; i--) {
-                feedJsonData3[i]["avt"] = getAvtById(feedJsonData3[i]["uid"])
+                avtsTus = getAvtById(feedJsonData3[i]["uid"])
                 var numCmtInt = feedJsonData3[i]["cmt"].length
 
                 var numInt = feedJsonData3[i]["interact"].length
@@ -164,9 +168,9 @@ async function initFeed() {
                     jsonCmtEx += feedDefaultCmt(feedJsonData3[i]["cmt"][g], getAvtByUName(feedJsonData3[i]["cmt"][g]["username"]))
                 }
                 if (feedJsonData3[i]["interact"].indexOf(clientUname) >= 0) {
-                    feedOuput.innerHTML += feedDefault(feedJsonData3[i], numInt, ' liked', jsonCmtEx, numCmtInt)
+                    feedOuput.innerHTML += feedDefault(avtsTus, feedJsonData3[i], numInt, ' liked', jsonCmtEx, numCmtInt)
                 } else {
-                    feedOuput.innerHTML += feedDefault(feedJsonData3[i], numInt, "", jsonCmtEx, numCmtInt)
+                    feedOuput.innerHTML += feedDefault(avtsTus, feedJsonData3[i], numInt, "", jsonCmtEx, numCmtInt)
                 }
 
             }

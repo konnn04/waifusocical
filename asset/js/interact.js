@@ -16,7 +16,6 @@ async function likeTus(i, clientUname) {
             userInteract.push(clientUname)
         } else {
             var vt = userInteract.indexOf(clientUname)
-            console.log(vt)
 
             if (vt >= 0) {
                 userInteract.splice(vt, 1)
@@ -27,7 +26,6 @@ async function likeTus(i, clientUname) {
         await callAPIFeed(3, { "interact": userInteract }, idTus)
         numHeart[i].innerText = userInteract.length
 
-        console.log(userInteract)
     } else {
         alert("Sống chậm lại 5 giây được không???")
     }
