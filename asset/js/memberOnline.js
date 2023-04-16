@@ -5,7 +5,7 @@ function syncListMemberOnline() {
     boxListMember.innerHTML = ""
     var timeNowDefault = getTimeSecord()
     for (let k = 0; k < infoJson.length; k++) {
-        if ((timeNowDefault - infoJson[k]["timenow"]) <= 11) {
+        if ((timeNowDefault - infoJson[k]["timenow"]) <= 20) {
             boxListMember.innerHTML += `
             <div class="itemMember">
                 <div class="avtItemMember" style="background-image: url(${infoJson[k]["avt"]})">
@@ -17,7 +17,7 @@ function syncListMemberOnline() {
         }
     }
     for (let k = 0; k < infoJson.length; k++) {
-        if ((timeNowDefault - infoJson[k]["timenow"]) > 11) {
+        if ((timeNowDefault - infoJson[k]["timenow"]) > 20) {
             boxListMember.innerHTML += `
             <div class="itemMember bright50">
                 <div class="avtItemMember" style="background-image: url(${infoJson[k]["avt"]})">
