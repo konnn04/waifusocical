@@ -225,7 +225,7 @@ function showplaylist(song) {
         plistbox.innerHTML += `
         <div class="item-song">
         <div class="pl-img">
-        <img src=".${e.img}" alt="">
+        <img src="${e.img}" alt="">
     </div>
     <div class="pl-info">
         <p class="pl-name">${e.name}</p>
