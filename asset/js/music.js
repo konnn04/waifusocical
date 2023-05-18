@@ -110,13 +110,13 @@ async function readJSON() {
 
 //=====================
 async function setSong(song) {
-    audioPlay = new Audio(nameRes + song[nSong]["link"]);
+    audioPlay = new Audio(song[nSong]["link"]);
     nameSong.innerText = song[nSong]["name"];
     nameSinger.innerText = song[nSong]["singer"];
-    thumImg.src = `${nameRes}${song[nSong]["img"]}`;
+    thumImg.src = `${song[nSong]["img"]}`;
     audioPlay.volume = vol;
     sizeSong = song.length
-    root.style.setProperty('--bgBoxMusic', `url("${nameRes}${song[nSong]["img"]}")`)
+    root.style.setProperty('--bgBoxMusic', `url("${song[nSong]["img"]}")`)
 
 }
 
