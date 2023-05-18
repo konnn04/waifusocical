@@ -86,10 +86,10 @@ Btn[2].onclick = (e) => {
 
 async function readJSON() {
     if (checkPlay == true) pauseMusic()
-    fetch(`${nameRes}/asset/js/song.json`)
+    fetch(`https://64425c0376540ce2258a2255.mockapi.io/v1/Music`)
         .then(res => res.json())
         .then(data => {
-            setSong(data.song);
+            setSong(data);
             if (firstEvent == false) {
                 playMusic()
             } else {
@@ -221,7 +221,7 @@ moreBtn.onclick = (e) => {
 }
 
 function showplaylist(song) {
-    song.song.forEach((e, i) => {
+    song.forEach((e, i) => {
         plistbox.innerHTML += `
         <div class="item-song">
         <div class="pl-img">
